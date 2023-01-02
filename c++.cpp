@@ -22,5 +22,12 @@ int main()
     cout<<j<<endl;// 10000000000
     int mx= INT_MAX;
     cout<<mx<<endl;
+     double a=100000;
+    double b=100000;
+    double c=a*b;
+    cout<<c<<endl;//1e+10
+    cout<<fixed<<c<<endl;//10000000000.000000
+    cout<<fixed<<setprecision(0)<<c<<endl;// 10000000000
+    
     
 }
