@@ -1,0 +1,18 @@
+  /* **Parameterized Constructor:**
+   Write a class `Rectangle` with a parameterized constructor that initializes the length and width. Add a method `area` that returns the area of the rectangle.  */
+   
+   #include <iostream>
+   using namespace std;
+class Rectangle{
+    public:
+    int length, breadth;
+    Rectangle():length(10)   ,  breadth(20) {};
+    int area(){
+       return length*breadth;
+    };
+};
+int main()
+{
+    Rectangle R;
+     cout<< R.area()<<" "<<endl;
+}
