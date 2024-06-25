@@ -1,0 +1,150 @@
+q.1
+Write a C program to reverse a given string without using any additional library functions.
+
+#include <stdio.h>
+#include <string.h>
+int main() {
+	char str[100];
+	printf("Enter a string:");
+	scanf("%s", str);
+   
+	int length = strlen(str);
+	for(int i=length-1;i>=0;i--) {
+		printf("%c",str[i]);
+	}
+  }
+
+q.2 Implement a function in C that takes an integer array and its size as arguments and sorts the elements of the array in ascending order using a selection sort algorithm.#include <stdio.h>
+#include <stdio.h>
+void selectionSort(int arr[], int n)
+{
+    int i, j, min;
+
+    for (i = 0; i < n - 1; i++) {
+
+        min = i;
+        for (j = i + 1; j < n; j++) {
+            if (arr[j] < arr[min])
+                min = j;
+        }
+
+       int temp= arr[i];
+      arr[i]=arr[min];
+        arr[min]=temp;
+    }
+}
+
+
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++) {
+        printf("%d ",arr[i]);
+        
+    }
+}
+
+
+int main()
+{
+    int arr[] = { 64, 25, 12, 22, 11 };
+    int n = 5;
+
+
+    selectionSort(arr, n);
+   
+    printArray(arr, n);
+    return 0;
+}
+   Q.3>Explain the concept of structures in C and write a program to store student information (name, roll number, marks) using a structure.
+
+
+#include <stdio.h>
+struct Student {
+    char name[50];
+    int rollNumber;
+    float marks;
+};
+int main() {
+    struct Student students[5]; 
+    for (int i = 0; i < 5; i++) {
+        printf("Enter details for student %d:\n", i + 1);
+        printf("Name: ");
+        scanf("%s", students[i].name); 
+        printf("Roll Number: ");
+        scanf("%d", &students[i].rollNumber);
+        printf("Marks: ");
+        scanf("%f", &students[i].marks);
+        printf("\n");
+    }
+    printf("Student Information:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Student %d\n", i + 1);
+        printf("Name: %s\n", students[i].name);
+        printf("Roll Number: %d\n", students[i].rollNumber);
+        printf("Marks: %.2f\n", students[i].marks);
+        printf("\n");
+    }
+    return 0;
+}
+q.4>
+
+A Singly Linked has nodes with a data field and a next link field. A Doubly Linked List has a previous link field along with a data field and a next link field. In a Singly Linked List, the traversal can only be done using the link of the next node.
+
+Singly Linked List                                                                                                          Doubly Linked List
+
+
+The singly linked list can be traversed only in the forward direction.                       The doubly linked list can be accessed in both directions.
+
+It requires only one list pointer variable, i.e.,                                                            It requires two list pointer variables, head and last. 
+It utilizes less memory space.	                                                                                 It utilizes more memory space.
+Efficiency	It is less efficient as compared to a doubly-linked list.	                                 It is more efficient.
+It can be implemented on the stack.	                                                                  It can be implemented on stack, heap and binary tree.
+In a singly linked list, the time complexity for
+ inserting and deleting an element from the list is O(n).	                              In a doubly-linked list, the time complexity for inserting and deleting an element is O(1).
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q.5>
+pointers are variables that store memory addresses. They allow you to indirectly access and manipulate data stored in memory. 
+
+#include <stdio.h>
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+int main() {
+    int x = 5, y = 10;
+    printf("x=%d, y = %d\n", x, y);
+    swap(&x, &y);
+    printf(" x = %d, y = %d\n", x, y);
+
+    return 0;
+}
+
+
+
+
+
+
