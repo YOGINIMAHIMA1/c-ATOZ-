@@ -682,8 +682,7 @@ Logical OR (||): Could be overloaded to provide an alternative condition or fall
 Logical NOT (!): Could be overloaded to negate a specific condition or state of the object.
 Example Scenario:
 
-cpp
-Copy code
+
 class Door {
 private:
     bool isOpen;
@@ -739,8 +738,7 @@ When overloading the subscript operator ([]) for a class, ambiguity can arise if
 Use Different Parameters: Overload the subscript operator with different parameter types or use additional arguments to clearly distinguish between different types of subscripting.
 Example:
 
-cpp
-Copy code
+
 #include <iostream>
 #include <vector>
 
