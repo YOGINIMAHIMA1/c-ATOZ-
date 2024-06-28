@@ -1,0 +1,98 @@
+Question 1: Shape Hierarchy
+
+Create a base class Shape with a pure virtual function draw() that has no implementation. Derive classes Square, Circle, and Triangle from Shape. Each derived class should override draw() to provide its specific drawing behavior (e.g., printing "****" for square, "OOO" for circle, etc.). Write a function printShape(Shape* shape) that takes a base class pointer and calls draw() on it. Demonstrate polymorphism by creating objects of the derived classes, storing them in a Shapearray, and calling printShape() on each element.
+* #include <iostream>
+using namespace std;
+class Shape{
+    int x=5;
+    public:
+   virtual void draw()=0;
+    virtual ~Shape(){}
+};
+class Square:public Shape{
+    
+    void draw() override{
+       cout<<"*******"<<endl;
+    }
+};
+class Circle:public Shape{
+    
+    void draw() override{
+       cout<<"000"<<endl;
+       cout<<"000000"<<endl;
+       cout<<"000"<<endl;
+    }
+};
+class Triangle:public Shape{
+    
+   void draw() override{
+       cout<<"*"<<endl;
+       cout<<"***"<<endl;
+       cout<<"*****"<<endl;
+       
+    }
+};
+void printShape(Shape* shape)
+{
+    shape->draw();
+}
+int main(){
+   Square square;
+   Circle circle;
+   Triangle triangle;
+   Shape *shape[]={&square, &circle,&triangle};
+   for (Shape* shape : shape) {
+        printShape(shape);
+        cout << endl;
+    }
+}
+
+Question 2: Animal Sounds
+
+Design a base class Animal with a pure virtual function makeSound() that returns a string representing the animal's sound. Derive classes like Dog, Cat, and Bird from Animal, each overriding makeSound() with the appropriate sound ("Woof!", "Meow!", "Chirp!"). Create a function playAnimalSound(Animal* animal) that takes an Animal pointer and calls makeSound(). Populate an Animal* array with various animal objects and use playAnimalSound() to hear their sounds polymorphically.
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Animal{
+    public:
+   virtual string makeSound()=0;
+    virtual ~Animal() {};
+};
+class Dog: public Animal{
+    public:
+   string makeSound() override {
+        return "Woof!";
+    }
+    
+};
+class Cat:public Animal{
+    public:
+   string  makeSound() override{
+        return "Meow!";
+        
+    }
+    
+};
+class Bird: public Animal{
+    public:
+     string  makeSound() override{
+        return "Chirp!";
+    }
+    
+};
+   void playAnimalSound(Animal* animal){
+    cout << animal->makeSound() << endl;
+}
+int main() {
+    Dog d;
+    Cat c;
+    Bird b;
+    Animal *animal[]={&d, &c, &b};
+    for(Animal *animal:animal){
+        playAnimalSound(animal);
+        cout<<endl;
+    }
+
+    return 0;
+}
