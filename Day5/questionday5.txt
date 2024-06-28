@@ -1,0 +1,227 @@
+q.1Problem Statement: Distance Calculation Using Operator Overloading
+You are required to implement a program that calculates distances using operator overloading in C++. The program should be able to perform the following operations on distances:
+
+Addition of Distances:
+
+Implement an addition operator (+) that adds two distances together.
+The distance should be represented in feet and inches.
+Subtraction of Distances:
+
+Implement a subtraction operator (-) that subtracts one distance from another.
+Ensure that the subtraction operation handles cases where the result may involve negative values or borrowing (like in subtraction of inches).
+Comparison of Distances:
+
+Implement comparison operators (==, !=, <, >, <=, >=) to compare distances based on their total length (combined feet and inches).
+Use these operators to determine which distance is greater, less than, or equal to another.
+Requirements:
+Distance Class: Implement a Distance class with appropriate member variables (feet and inches).
+Constructors: Implement constructors to initialize distances.
+Member Functions: Implement member functions for display and any other necessary operations.
+Operator Overloading: Overload the necessary operators (+, -, ==, !=, <, >, <=, >=) inside the Distance class to perform the specified operations.
+Testing: Create a main() function to test the implemented Distance class and its operator overloading functionality. Test various scenarios including addition, subtraction, and comparison of distances.
+
+
+#include <iostream>
+using namespace std;
+
+class Distance {
+private:
+    int feet;
+    int inches;
+
+public:
+    Distance() : feet(0), inches(0) {}
+    Distance(int ft, int in) : feet(ft), inches(in) {}
+
+    // Display distance
+    void display() const {
+        cout << feet << " feet " << inches << " inches";
+    }
+
+    // Overload addition operator (+)
+    Distance operator+(const Distance& other) const {
+        int totalFeet = feet + other.feet;
+        int totalInches = inches + other.inches;
+        if (totalInches >= 12) {
+            totalFeet += totalInches / 12;
+            totalInches %= 12;
+        }
+        return Distance(totalFeet, totalInches);
+    }
+
+    // Overload subtraction operator (-)
+    Distance operator-(const Distance& other) const {
+        int totalFeet = feet - other.feet;
+        int totalInches = inches - other.inches;
+        if (totalInches < 0) {
+            totalFeet--;
+            totalInches += 12;
+        }
+        return Distance(totalFeet, totalInches);
+    }
+
+    // Overload equality operator (==)
+    bool operator==(const Distance& other) const {
+        return (feet == other.feet && inches == other.inches);
+    }
+
+    // Overload inequality operator (!=)
+    bool operator!=(const Distance& other) const {
+        return !(*this == other);
+    }
+
+    // Overload less than operator (<)
+    bool operator<(const Distance& other) const {
+        int total1 = feet * 12 + inches;
+        int total2 = other.feet * 12 + other.inches;
+        return total1 < total2;
+    }
+
+    // Overload greater than operator (>)
+    bool operator>(const Distance& other) const {
+        return !(*this < other || *this == other);
+    }
+
+    // Overload less than or equal to operator (<=)
+    bool operator<=(const Distance& other) const {
+        return (*this < other || *this == other);
+    }
+
+    // Overload greater than or equal to operator (>=)
+    bool operator>=(const Distance& other) const {
+        return !(*this < other);
+    }
+};
+
+int main() {
+    Distance d1(5, 9);
+    Distance d2(2, 11);
+
+    // Addition of distances
+    Distance sum = d1 + d2;
+    cout << "Sum: ";
+    sum.display();
+    cout << endl;
+
+    // Subtraction of distances
+    Distance diff = d1 - d2;
+    cout << "Difference: ";
+    diff.display();
+    cout << endl;
+
+    // Comparison of distances
+    cout << "Comparison: ";
+    if (d1 == d2) {
+        cout << "d1 is equal to d2";
+    } else if (d1 != d2) {
+        cout << "d1 is not equal to d2";
+    }
+    if (d1 < d2) {
+        cout << ", d1 is less than d2";
+    } else if (d1 > d2) {
+        cout << ", d1 is greater than d2";
+    }
+    cout << endl;
+
+    return 0;
+}
+q.2>>
+
+Certainly! Here's a simple problem that demonstrates compile-time polymorphism (method overloading) in C++:
+You are required to implement a program that calculates the area of different shapes using compile-time polymorphism (method overloading) in C++. The program should support calculation of areas for the following shapes:
+Rectangle
+Circle
+Triangle
+Requirements:
+Shape Class: Implement a Shape class as a base class with virtual functions to calculate and display the area of each shape.
+Derived Classes: Implement derived classes Rectangle, Circle, and Triangle, inheriting from Shape, each with overridden functions to calculate and display their respective areas.
+Method Overloading: Use method overloading in the Shape class to define multiple calculateArea functions, each specific to one shape.
+Input and Output: Implement a main() function to test the implemented classes by creating instances of each shape, inputting dimensions, and displaying their calculated areas.
+#include <iostream>
+using namespace std;
+
+class Shape {
+public:
+    virtual void display() const {
+        cout << "Shape";
+    }
+
+    // Virtual functions for calculating area (method overloading)
+    virtual void calculateArea() const {
+        cout << "Area calculation not implemented for base class Shape." << endl;
+    }
+};
+
+class Rectangle : public Shape {
+private:
+    double length;
+    double width;
+
+public:
+    Rectangle(double l, double w) : length(l), width(w) {}
+
+    void display() const override {
+        cout << "Rectangle";
+    }
+
+    // Override calculateArea for Rectangle
+    void calculateArea() const override {
+        cout << "Area of Rectangle: " << length * width << endl;
+    }
+};
+
+class Circle : public Shape {
+private:
+    double radius;
+
+public:
+    Circle(double r) : radius(r) {}
+
+    void display() const override {
+        cout << "Circle";
+    }
+
+    // Override calculateArea for Circle
+    void calculateArea() const override {
+        cout << "Area of Circle: " << 3.14159 * radius * radius << endl;
+    }
+};
+
+class Triangle : public Shape {
+private:
+    double base;
+    double height;
+
+public:
+    Triangle(double b, double h) : base(b), height(h) {}
+
+    void display() const override {
+        cout << "Triangle";
+    }
+
+    // Override calculateArea for Triangle
+    void calculateArea() const override {
+        cout << "Area of Triangle: " << 0.5 * base * height << endl;
+    }
+};
+
+int main() {
+    // Create instances of each shape
+    Rectangle rect(5.0, 3.0);
+    Circle circle(4.5);
+    Triangle triangle(4.0, 6.0);
+
+    // Display and calculate areas using compile-time polymorphism
+    cout << "Calculating Areas:" << endl;
+    rect.display();
+    rect.calculateArea();
+
+    circle.display();
+    circle.calculateArea();
+
+    triangle.display();
+    triangle.calculateArea();
+
+    return 0;
+}
+
