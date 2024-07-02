@@ -20,7 +20,7 @@ class CurrencyConverter
 }
 
 };
-double CurrencyConverter::exchangeRate=0.97;
+double CurrencyConverter::exchangeRate=0.85;
 int main(){
     double amount,change;
     string convert;
