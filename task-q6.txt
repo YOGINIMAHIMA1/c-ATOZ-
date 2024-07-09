@@ -1,0 +1,50 @@
+Rectangle Class: Define a class Rectangle with member variables for width and height. Overload the + operator to return a new Rectangle object representing the sum of the areas of two rectangles.
+
+#include <iostream>
+
+class Rectangle {
+private:
+    double width;
+    double height;
+
+public:
+      Rectangle() : width(0.0), height(0.0) {}
+    Rectangle(double w, double h) : width(w), height(h) {}
+   
+
+    
+    double getWidth(){
+        return width;
+    }
+    double getHeight(){
+        return height;
+    }
+
+    
+    Rectangle operator+( Rectangle R) const {
+        double newWidth = width + R.width;
+        double newHeight = height + R.height;
+        return Rectangle(newWidth, newHeight);
+    }
+
+  
+    double area() const {
+        return width * height;
+    }
+};
+
+int main() {
+    
+    Rectangle rect1(3.0, 4.0);
+    Rectangle rect2(5.0, 2.0);
+
+    
+    Rectangle sumRect = rect1 + rect2;
+
+    std::cout << " width = " << rect1.getWidth() << ", height = " << rect1.getHeight() << ", area = " << rect1.area() << std::endl;
+    std::cout << " width = " << rect2.getWidth() << ", height = " << rect2.getHeight() << ", area = " << rect2.area() << std::endl;
+
+    std::cout << "Sum Rectangle: Width = " << sumRect.getWidth() << ", Height = " << sumRect.getHeight() << ", Area = " << sumRect.area() << std::endl;
+
+    return 0;
+}
