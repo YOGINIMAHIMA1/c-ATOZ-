@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+template <typename T>
+void swap(T* a, T* b) {
+    T temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 5, y = 10;
+    double a = 1.1, b = 2.2;
+    char c = 'A', d = 'B';
+
+    swap(&x, &y);
+    swap(&a, &b);
+    swap(&c, &d);
+
+    cout << "Swapped int: " << x << ", " << y << endl;
+    cout << "Swapped double: " << a << ", " << b << endl;
+    cout << "Swapped char: " << c << ", " << d << endl;
+
+    return 0;
+}

@@ -1,0 +1,14 @@
+Explicit Casting - Range Conversion: Declare a double variable d with the value 123.456. Use explicit casting to convert d to an int variable i and print i. Explain the behavior when converting from a larger range to a smaller one.
+
+#include<iostream>
+using namespace std;
+
+
+int main(){
+    double d = 123.456;
+    int  i;
+    
+     i = static_cast<int>(d);
+    
+    std::cout << "Explicit value of d : " << i << std::endl;
+}

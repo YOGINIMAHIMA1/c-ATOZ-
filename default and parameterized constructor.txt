@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+
+class Book {
+private:
+    std::string title;
+    int pages;
+
+public:
+    // Default constructor
+    Book() : title("Unknown"), pages(0) {}
+
+    // Parameterized constructor
+    Book(const std::string &t, int p) : title(t), pages(p) {}
+
+    // Method to display the book's details
+    void display() const {
+        std::cout << "Book Title: " << title << ", Pages: " << pages << std::endl;
+    }
+};
+
+int main() {
+    // Create an instance of Book using the default constructor
+    Book defaultBook;
+    defaultBook.display();
+
+    // Create an instance of Book using the parameterized constructor
+    Book paramBook("My soul", 100);
+    paramBook.display();
+
+    return 0;
+}

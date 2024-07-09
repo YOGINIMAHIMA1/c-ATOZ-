@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+template <typename T>
+T findMinimum(T array[], int n) {
+
+    T minElement = array[0];
+    for (int i = 1; i < n; ++i) {
+        if (array[i] < minElement) {
+            minElement = array[i];
+        }
+    }
+    return minElement;
+}
+
+int main() {
+    int intArray[] = {1,2,3,4,5,6,7,8};
+    double doubleArray[] = {0.1, 0.3, 1.1, 2.2, 1.9};
+    char charArray[] = {'n', 'i', 't', 'h','y','a'};
+
+    cout << "Min int array: " << findMinimum(intArray, 8) << endl;
+    cout << "Min double array: " << findMinimum(doubleArray, 5) << endl;
+    cout << "Min char array: " << findMinimum(charArray, 6) << endl;
+
+    return 0;
+}

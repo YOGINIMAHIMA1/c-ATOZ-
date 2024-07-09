@@ -1,0 +1,116 @@
+Pointer Arithmetic:
+1.Write a C program to create an integer array of size 5, initialize it with values from 1 to 5, and then use pointer arithmetic to print each element of the array.
+
+#include <iostream>
+
+int main() {
+    
+    int arr[5] = {1, 2, 3, 4, 5};
+
+    int *ptr = arr;
+
+    for(int i = 0; i < 5; i++) {
+        std::cout << *(ptr + i) << std::endl;
+    }
+
+    return 0;
+}
+
+3.Write a C function void swap(int *a, int *b) that swaps the values of two integers. Then, write a main function to test this swap function using pointer arguments.
+
+#include <iostream>
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 5;
+    int y = 10;
+
+    
+    std::cout << "Before swap: x = " << x << ", y = " << y << std::endl;
+
+    
+    swap(&x, &y);
+
+
+    std::cout << "After swap: x = " << x << ", y = " << y << std::endl;
+
+    return 0;
+}
+
+
+
+5.Pointer to Function:
+Write a C program to create a function pointer that points to a function int add(int, int). Use the function pointer to call the add function and print the result.
+
+#include <iostream>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+ 
+    int (*funcPtr)(int, int) = &add;
+
+    int x = 5;
+    int y = 10;
+
+    int result = funcPtr(x, y);
+
+    std::cout << " adding " << x << " and " << y << " is: " << result << std::endl;
+
+    return 0;
+}
+
+
+Structures
+Structure Basics:
+11.Define a structure struct Point with two integer members x and y. Write a C program to create a Point variable, initialize it with values, and print the values.
+
+#include <iostream>
+
+struct Point {
+    int x;
+    int y;
+};
+
+int main() {
+    
+    Point p;
+    p.x = 10;
+    p.y = 20;
+
+    std::cout << "Point p: x = " << p.x << ", y = " << p.y << std::endl;
+
+    return 0;
+}
+
+13.Structure Pointers:
+Write a C program to define a structure struct Rectangle with members length and width. Create a pointer to a Rectangle variable, dynamically allocate memory for it, initialize the members, and print the values.
+
+#include <iostream>
+
+struct Rectangle {
+    int length;
+    int width;
+};
+
+int main() {
+    
+    Rectangle *rectPtr;
+
+    rectPtr = new Rectangle;
+    
+    rectPtr->length = 15;
+    rectPtr->width = 25;
+
+    std::cout << " length = " << rectPtr->length << " width = " << rectPtr->width << std::endl;
+
+    return 0;
+}
+

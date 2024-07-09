@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+template <typename T>
+T findMax(T array[], int n) {
+
+    T maxElement = array[0];
+    for (int i = 1; i < n; i++) {
+        if (array[i] > maxElement) {
+            maxElement = array[i];
+        }
+    }
+    return maxElement;
+}
+
+int main() {
+    int intArray[] = {1,2,3,4,5,6,7,8};
+    double doubleArray[] = {0.1, 0.3, 1.1, 2.2, 1.9};
+    char charArray[] = {'n', 'i', 't', 'h','y','a'};
+
+    cout << "Max int array: " << findMax(intArray, 8) << endl;
+    cout << "Max double array: " << findMax(doubleArray, 5) << endl;
+    cout << "Max char array: " << findMax(charArray, 6) << endl;
+
+    return 0;
+}

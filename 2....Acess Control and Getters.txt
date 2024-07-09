@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+
+class User {
+private:
+    std::string username;
+    std::string profile_picture;
+
+public:
+    User(const std::string& username, const std::string& profile_picture) 
+        : username(username), profile_picture(profile_picture) {}
+
+    std::string getUsername() const {
+        return username;
+    }
+
+    std::string getProfilePicture() const {
+        return profile_picture;
+    }
+};
+
+int main() {
+    User user("Nithya", "profile_pic.jpg");
+    std::cout << "Username: " << user.getUsername() << std::endl;            
+    std::cout << "Profile Picture: " << user.getProfilePicture() << std::endl; 
+
+    return 0;
+}
