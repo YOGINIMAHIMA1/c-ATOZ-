@@ -1,0 +1,31 @@
+#include <iostream>
+class MyClass {
+    private:
+    static int counter;
+    int count;
+    public:
+    MyClass() {
+        count++;
+        counter++;
+    }
+    static int getCounter() {
+        return counter;
+    }
+    int getCount() {
+        return count;
+    }
+};
+
+int MyClass::counter = 0;
+int main() {
+    MyClass obj1;
+    MyClass obj2;
+    MyClass obj3;
+    MyClass obj4;
+    std::cout <<"Number of objects created:" <<MyClass::getCounter() <<std::endl;
+    std::cout <<"object1 count method:" <<obj1.getCount() <<std::endl;
+    std::cout <<"object2 count method:" <<obj2.getCount() <<std::endl;
+    std::cout <<"object3 count method:" <<obj3.getCount() <<std::endl;
+    std::cout <<"object4 count method:" <<obj4.getCount() <<std::endl;
+    return 0;
+}

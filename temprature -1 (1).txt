@@ -1,0 +1,22 @@
+#include <iostream>
+
+class TemperatureSensor {
+private:
+    float celsius;
+
+public:
+    TemperatureSensor(float temp) : celsius(temp) {}
+    friend void DisplayTemperature(const TemperatureSensor& sensor);
+};
+
+void DisplayTemperature(const TemperatureSensor& sensor) {
+    float fahrenheit = (sensor.celsius * 9 / 5) + 32;
+    std::cout << "Temperature in Fahrenheit: " << fahrenheit << std::endl;
+}
+
+int main() {
+    TemperatureSensor sensor(25.0);
+    DisplayTemperature(sensor);
+
+    return 0;
+}

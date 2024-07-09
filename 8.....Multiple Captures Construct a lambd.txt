@@ -1,0 +1,21 @@
+Multiple Captures: Construct a lambda that captures two variables (an integer and a boolean) by value and performs a conditional operation based on the boolean value.
+
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n =10;
+    bool f = true;
+    
+    auto result = [](int n, bool f){
+        if(f){
+            return n * 2;
+        }else {
+            return n * 1;
+        }
+    };
+    
+    int re = result(n, f);
+    std::cout << "Result is : " << re << std::endl;
+}

@@ -1,0 +1,95 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <numeric>
+
+class Student {
+public:
+    std::string name;
+    int id;
+    std::vector<int> scores;
+
+    Student(const std::string& name, int id, const std::vector<int>& scores)
+        : name(name), id(id), scores(scores) {}
+
+    double getAverageScore() const {
+        return scores.empty() ? 0.0 : static_cast<double>(std::accumulate(scores.begin(), scores.end(), 0)) / scores.size();
+    }
+};
+
+class Classroom {
+private:
+    std::vector<Student> students;
+
+public:
+    void addStudent(const std::string& name, int id, const std::vector<int>& scores) {
+        students.emplace_back(name, id, scores);
+    }
+
+    Student* findStudentByName(const std::string& name) {
+        for (auto& student : students)
+            if (student.name == name) return &student;
+        return nullptr;
+    }
+
+    Student* findStudentByID(int id) {
+        for (auto& student : students)
+            if (student.id == id) return &student;
+        return nullptr;
+    }
+
+    double getClassAverageScore() const {
+        double totalScore = 0.0;
+        int totalCount = 0;
+        for (const auto& student : students) {
+            totalScore += std::accumulate(student.scores.begin(), student.scores.end(), 0);
+            totalCount += student.scores.size();
+        }
+        return totalCount == 0 ? 0.0 : totalScore / totalCount;
+    }
+
+    void modifyStudentScore(int id, const std::vector<int>& newScores) {
+        if (Student* student = findStudentByID(id))
+            student->scores = newScores;
+    }
+
+    void displayStudentDetails(const Student& student) const {
+        std::cout << "Name: " << student.name << ", ID: " << student.id
+                  << ", Scores: ";
+        for (const int score : student.scores) std::cout << score << " ";
+        std::cout << ", Average Score: " << student.getAverageScore() << "\n";
+    }
+
+    void displayAllStudents() const {
+        for (const auto& student : students) displayStudentDetails(student);
+    }
+};
+
+int main() {
+    Classroom classroom;
+    classroom.addStudent("Alice", 1, {85, 90, 78});
+    classroom.addStudent("Bob", 2, {70, 88, 92});
+    classroom.addStudent("Charlie", 3, {95, 85, 87});
+
+    std::cout << "All students:\n";
+    classroom.displayAllStudents();
+
+    if (Student* student = classroom.findStudentByName("Bob")) {
+        std::cout << "Found student by name (Bob):\n";
+        classroom.displayStudentDetails(*student);
+    }
+
+    if (Student* student = classroom.findStudentByID(2)) {
+        std::cout << "Found student by ID (2):\n";
+        classroom.displayStudentDetails(*student);
+    }
+
+    std::cout << "Class average score: " << classroom.getClassAverageScore() << "\n";
+
+    classroom.modifyStudentScore(2, {80, 85, 90});
+
+    std::cout << "All students after modification:\n";
+    classroom.displayAllStudents();
+
+    return 0;
+}

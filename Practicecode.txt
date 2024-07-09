@@ -1,0 +1,66 @@
+Pointer Arithmetic:
+Write a C program to create an integer array of size 5, initialize it with values from 1 to 5, and then use pointer arithmetic to print each element of the array.
+#include <stdio.h>
+int main(){
+int arr[5]={1,2,3,4,5};
+int *ptr=&arr[0];
+for(int i=0;i<5;i++)
+{
+  printf("%d ",*(ptr++));
+}
+}
+
+
+Pointer to Pointer:
+Write a C program to create a pointer to a pointer for an integer variable. Initialize the integer variable with a value, and then print its value using both the single pointer and the pointer to pointer.
+
+
+#include <stdio.h>
+int main(){
+int value=23;
+int *ptr=&value;
+int **ptr1= &ptr;
+printf("%p %d %d",ptr,*ptr,**ptr1);
+}
+
+
+Pointer Function Parameters:
+Write a C function void swap(int *a, int *b) that swaps the values of two integers. Then, write a main function to test this swap function using pointer arguments.
+
+#include <stdio.h>
+void swap(int *a, int *b){
+int temp= *a;
+*a=*b;
+*b=temp;
+}
+int main(){
+int x=10,y=30;
+ swap(&x,&y);
+printf("%d,%d",x,y);
+}
+
+
+Dynamic Memory Allocation:
+Write a C program to dynamically allocate memory for an array of integers of size 10. Initialize the array with values from 1 to 10, then print the values and free the allocated memory.
+
+
+
+int main(){
+int arr[10]={1,2,3,4,5,6,7,8,9,10};
+
+
+Pointer to Function:
+Write a C program to create a function pointer that points to a function int add(int, int). Use the function pointer to call the add function and print the result.
+void add(a, b){
+     return a+b;
+}
+
+int main(){
+int x=10,y=20;
+int *res;
+*res=int add(int,int)
+printf("%d",*res);
+}
+
+
+

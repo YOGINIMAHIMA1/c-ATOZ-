@@ -1,0 +1,47 @@
+
+Static Members:
+Create a class Account that has a static data member totalAccounts to keep track of the number of accounts created. Implement necessary constructors and destructors to update totalAccounts. Write a function to display the total number of accounts.
+
+#include <iostream>
+using namespace std;
+
+class Account {
+private:
+    static int totalAccounts; // Static data member to keep track of total accounts
+
+public:
+    // Constructor
+    Account() {
+        totalAccounts++;
+    }
+
+    // Destructor
+    ~Account() {
+        totalAccounts--;
+    }
+
+    // Static function to display the total number of accounts
+    static void displayTotalAccounts() {
+        cout << "Total accounts: " << totalAccounts << endl;
+    }
+};
+
+// Definition of the static data member
+int Account::totalAccounts = 0;
+
+int main() {
+    Account::displayTotalAccounts(); // Output: Total accounts: 0
+
+    Account a1;
+    Account::displayTotalAccounts(); // Output: Total accounts: 1
+
+    {
+        Account a2;
+        Account a3;
+        Account::displayTotalAccounts(); // Output: Total accounts: 3
+    }
+
+    Account::displayTotalAccounts(); // Output: Total accounts: 1
+
+    return 0;
+}
