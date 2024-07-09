@@ -1,0 +1,274 @@
+#Method overriding
+Base class and child class has some common methods
+ #method overloading
+Two or more function have same name but different arguments
+
+Single Level Inheriannce
+Scenario:
+
+Design a class hierarchy to represent various entities in a university system.
+
+Base Class (Person):
+
+Data members: name (string), age (int)
+Member functions: getDetails(), a virtual function to print basic person details
+Derived Class (Student): (Single Inheritance)
+
+Inherits from Person
+Data members: studentId (int), major (string)
+Member functions:
+setMajor(string) to set the student's major
+getMajor() to retrieve the major
+Override getDetails() to include student-specific information
+Derived Class (Faculty): (Single Inheritance)
+
+Inherits from Person
+Data members: department (string), employeeId (int)
+Member functions:
+setDepartment(string) to set the faculty member's department
+getDepartment() to retrieve the department
+Override getDetails() to include faculty-specific information
+Derived Class (TeachingAssistant): (Multilevel Inheritance)
+
+Inherits from Student (inherits indirectly from Person as well)
+Data member: coursesTeaching (array/vector of strings)
+Member functions:
+setCoursesTeaching(string[]) to set the courses the TA is teaching
+getCoursesTeaching() to retrieve the list of courses
+Override getDetails() to include TA-specific information (e.g., courses)
+Derived Class (ResearchAssistant): (Hierarchical Inheritance)
+
+Inherits from Person (separate inheritance from Student)
+Data members: researchArea (string), supervisor (string)
+Member functions:
+setResearchArea(string) to set the research area
+getResearchArea() to retrieve the research area
+setSupervisor(string) to set the research supervisor
+getSupervisor() to retrieve the supervisor
+Override getDetails() to include RA-specific information
+Derived Class (GraduateStudentTA): (Hybrid Inheritance)
+
+Inherits from both Student and TeachingAssistant (combines functionality)
+Might have additional data members or functions specific to graduate student TAs
+
+
+
+class Person{
+public:
+string name;
+int age;
+void getDetails(){
+cout<<name<<" "<<age<<endl;
+};
+
+class Student:public Person{
+int studentId;
+string major;
+void setMajor(string){
+cout<<major<<endl;
+}
+
+void getMajor(){
+cin>>major;
+}
+
+void getDetails(){
+cout<<name<<" "<<age<<" "<<major<<endl;
+}
+};
+
+
+class Faculty:public Student, public Person{
+string department;
+
+int  employeeid;
+
+void setDepartment(){
+cout<<department<<endl;
+}
+void getDepartment(){
+cin>>department;
+}
+
+void getDetails{
+cout<<department<< " "<<endl;
+}
+};
+class TeachingAssistant :public Student, Person{
+
+vector  CourseTeaching(string[]);
+
+void  getCoursesTeaching(){
+cin>>course;
+}
+void  setCoursesTeaching(string[]){
+cout<<
+}
+
+void getDetails(){
+cout<<course<<endl;
+}
+
+class ReserachAssistant(){
+    string researchArea , supervisor ;
+setResearchArea(string) {
+}
+getResearchArea() {
+cin>>reserachArea<<endl;
+}
+
+setSupervisor(string){
+cout<<researchArea<<endl;
+}
+getSupervisor() {
+cin>>supervisor<<endl;
+}
+void getDetails{
+cout<<researchArea<<endl;
+}
+};
+class GraduateStudentTA: public student, public TeachingAssistant{
+int rollNo;
+};
+
+int main(){
+Student S;
+S.setMajor();
+}
+
+Design a class hierarchy to represent various entities in a company 
+
+Base Class (Company):
+
+Data members: name (string), age (int)
+Member functions: getDetails(), a virtual function to print basic person details
+Derived Class (Student): (Single Inheritance)
+
+Inherits from Person
+Data members: studentId (int), major (string)
+Member functions:
+setMajor(string) to set the student's major
+getMajor() to retrieve the major
+Override getDetails() to include student-specific information
+Derived Class (Faculty): (Single Inheritance)
+
+Inherits from Company
+Data members: department (string), employeeId (int)
+Member functions:
+setDepartment(string) to set the faculty member's department
+getDepartment() to retrieve the department
+Override getDetails() to include faculty-specific information
+Derived Class (TeachingAssistant): (Multilevel Inheritance)
+
+Inherits from Student (inherits indirectly from Person as well)
+Data member: companyDepartment (array/vector of strings)
+Member functions:
+setDepartmentTeaching(string[]) to set the courses the TA is teaching
+getDepartmentTeaching() to retrieve the list of courses
+Override getDetails() to include TA-specific information (e.g., courses)
+Derived Class (ResearchAssistant): (Hierarchical Inheritance)
+
+Inherits from Company (separate inheritance from Student)
+Data members: researchArea (string), supervisor (string)
+Member functions:
+setResearchArea(string) to set the research area
+getResearchArea() to retrieve the research area
+setSupervisor(string) to set the research supervisor
+getSupervisor() to retrieve the supervisor
+Override getDetails() to include RA-specific information
+Derived Class (GraduateStudentTA): (Hybrid Inheritance)
+
+Inherits from both Student and TeachingAssistant (combines functionality)
+Might have additional data members or functions specific to graduate student TAs
+
+
+
+
+#include <iostream>
+using namespace std;
+class  A{
+     public :
+   void Display(){
+      cout<<"Display :"<<endl;
+};
+class B{
+      void Display(){
+     cout<<"Display1"<<endl;
+};
+class C: public A, public B{
+   Display();
+};
+int main(){
+    C c;
+   c.Display();
+}
+
+   Scenario:
+
+Imagine you're developi
+// Online C++ compiler to run C++ program online
+
+#include <iostream>
+#include <vector>
+using namespace std;
+class Person{
+    protected:
+    string name;
+    int id;
+    public:
+    Person(): name(name),id(id){}
+    void display(){
+        cout<<name<<" "<<id<<endl;
+    }
+};
+class student :public Person{
+    private:
+    string major;
+    double gpa;
+    public:
+    student(string name, int id,string major, double gpa):Person(name,id),major(major),gpa(gpa){}
+    void display(){
+        Person::display();
+        cout<<major<<" "<<gpa<<endl;
+    }
+    double  calculateSemesterGpa(vector <double> grades){
+        double sum=0;
+       sum+=grades;
+    }
+    gpa=grades.empty()? 0:sum/grades.size();
+    return gpa;
+};
+
+class Faculty:public Person{
+    private:
+    string department;
+    string title;
+    public:
+    Faculty(string name, int id, string department , string title):Person(name,id),department(department),title(title)
+    void teachCourse(string Coursename){ cout<<Coursename<<endl;
+        
+    }
+    void display(){
+        Person::display();
+        cout<<department<<" "<<title<<endl;
+    }
+};
+
+int main(){
+    student s("kavita",1001,"cs",6.7);
+    s.display();
+    vector<double> grades = {3.7, 3.8, 4.0, 3.6};
+    cout << "Calculated Semester GPA: " << s.calculateSemesterGPA(grades) << endl;
+
+    // Create Faculty object
+    Faculty f("Dr. Smith", 2001, "Physics", "Professor");
+    f.display();
+    f.teachCourse("Quantum Mechanics");
+
+}
+
+   
+
+
+
+

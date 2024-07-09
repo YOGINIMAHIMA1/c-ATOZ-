@@ -1,0 +1,179 @@
+#include <stdio.h>
+
+int main() {
+    int arr[5]={1,2,3,4,5};
+    int *ptr=arr;
+    for(int i=0;i<=4;i++){
+        printf("%d ",*(ptr+i));
+    }
+}
+
+
+#include <stdio.h>
+
+int main(){
+    int num=23;
+   int *ptr=&num;
+   int **ptr1= &ptr;
+    printf("%d ",*ptr);
+    printf("%d",**ptr1);
+}
+
+
+Write a C function void swap(int *a, int *b) that swaps the values of two integers. Then, write a main function to test this swap function using pointer arguments.
+
+void swap(int  *a, *b){
+int temp=*a;
+*a=*b;
+*b=temp;
+}
+int main(){
+int x=10,y=20;
+swap(  &x, &y);
+printf("%d,%d",x,y);
+}
+
+Write a C program to dynamically allocate memory for an array of integers of size 10. Initialize the array with values from 1 to 10, then print the values and free the allocated memory.
+#include <stdio.h>
+int main(){
+int arr[]={1,2,3,4,5,6,7,8,9,20};
+for(int i=0;i<arr.size();i++){
+printf("%d",arr[i])
+};
+
+
+
+Write a C program to create a function pointer that points to a function int add(int, int). Use the function pointer to call the add function and print the result.
+
+#include <stdio.h>
+int add(int a, int b){
+    return a+b;
+}
+int main(){
+    int (*ptr)(int , int);
+    ptr= &add;
+    int res=ptr(20,30);
+    printf("%d",res);
+}
+
+
+Define a structure struct Point with two integer members x and y. Write a C program to create a Point variable, initialize it with values, and print the values.
+#include <stdio.h>
+struct Point{
+int x,y;
+};
+int main(){
+struct Point P;
+P.x=10;
+P.y=20;
+printf("%d , %d",P.x,P.y);
+}
+
+Write a C program to define a structure struct Student with members name, age, and marks. Create an array of 3 students, initialize them with values, and print the details of each student.
+
+
+struct Student{
+ char * name;
+ int age;
+int marks;
+};
+int main(){
+struct Student S;
+for(int i=0;i<5;i++){
+printf("%sStudent[i].name
+S.age=21;
+S.marks=89;
+printf("%s",S.name)
+};
+
+
+
+1. **Default Constructor:**
+   Write a class `Student` with a default constructor that initializes the student's name to "Unknown" and age to 0. Add a method `display` to print the student's details.
+#include <iostream>
+using namespace std;
+class Student{
+private://   private class
+   string name; //data member
+   int age;
+public:
+Student():  name("Unknown"), age(0){}                         //  Student()----------------constructor
+void display(){                    // display()-------------member function
+cout<<name<<endl;
+cout<<age<<endl;
+}
+};
+int main(){
+Student S;
+S.display();
+}
+
+.  /* **Parameterized Constructor:**
+   Write a class `Rectangle` with a parameterized constructor that initializes the length and width. Add a method `area` that returns the area of the rectangle.  */
+   
+   #include <iostream>
+   using namespace std;
+class Rectangle{
+    public:
+    int length, breadth;
+    Rectangle():length(10)   ,  breadth(20) {};
+    int area(){
+       return length*breadth;
+    };
+};
+int main()
+{
+    Rectangle R;
+     cout<< R.area()<<" "<<endl;
+}
+
+3. **Multiple Constructors:**
+   Write a class `Book` that has both a default constructor and a parameterized constructor. The default constructor should set the title to "Unknown" and the number of pages to 0. The parameterized constructor should initialize the title and pages with given values.
+
+ #include <iostream>
+   #include <string>
+   using namespace std;
+   
+   class Book{
+       public:
+       string title;
+       int noofpages;
+       //default Constructor
+       Book(): title("Unknown"), noofpages(0) {}
+       //parameterized Constructor
+       Book(string t, int p):title(t), noofpages(p){}
+       
+   };
+   
+   int main(){
+       Book B;
+       cout<<B.title<<" "<<B.noofpages<<endl;
+       Book B1("OpenMind",22);
+       cout<<B1.title<<" "<<B1.noofpages<<endl;
+   }
+
+**Constructor Overloading:**
+   Write a class `Complex` that represents complex numbers. Implement a default constructor that sets both real and imaginary parts to 0, and a parameterized constructor that takes two arguments to initialize the real and imaginary parts.
+#include <iostream>
+using namespace std;
+class Complex{
+    public:
+    int real;
+    int imagenery;
+    Complex(): real(0),imagenery(0){}
+    Complex(int r, int i):real(r),imagenery(i){}
+    void display(){
+        cout<<real<<" "<<imagenery<<endl;;
+    };
+};
+int main() {
+   Complex Cno,Cno1;
+//cout<<Cno.real<< " "<<Cno.imagenery<<endl;
+Cno.display();
+ Cno1.real=10,Cno1.imagenery=20;
+// cout<<Cno1.real<<" "<<Cno1.imagenery<<endl;
+Cno1.display();
+
+    return 0;
+}
+

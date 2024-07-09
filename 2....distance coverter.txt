@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+
+class DistanceConverter {
+public:
+    static double convertMilesToKm(double miles) {
+        return miles * 1.60934;
+    }
+
+    static double convertKmToMiles(double kilometers) {
+        return kilometers / 1.60934;
+    }
+};
+
+class MathUtil {
+public:
+    static double add(double a, double b) {
+        return a + b;
+    }
+
+    static double subtract(double a, double b) {
+        return a - b;
+    }
+
+    static double multiply(double a, double b) {
+        return a * b;
+    }
+
+    static double divide(double a, double b) {
+        if (b == 0) {
+            std::cerr << "Division by zero error!" << std::endl;
+            return 0;
+        }
+        return a / b;
+    }
+};
+
+int main() {
+    double distance;
+    std::string unit;
+    std::cout << "Enter distance: ";
+    std::cin >> distance;
+    std::cout << "Enter unit (miles or kilometers): ";
+    std::cin >> unit;
+
+    // Example usage of MathUtil class
+    double a = 10, b = 2;
+    std::cout << "Addition: " << MathUtil::add(a, b) << std::endl;
+    std::cout << "Subtraction: " << MathUtil::subtract(a, b) << std::endl;
+    std::cout << "Multiplication: " << MathUtil::multiply(a, b) << std::endl;
+    std::cout << "Division: " << MathUtil::divide(a, b) << std::endl;
+
+    return 0;
+}

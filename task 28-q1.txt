@@ -1,0 +1,63 @@
+#include <iostream>
+
+class Distance {
+private:
+    int feet;
+    int inches;
+    
+    void normalize() {
+        feet += inches / 12;
+        inches %= 12;
+        if (inches < 0) {
+            feet -= 1;
+            inches += 12;
+        }
+    }
+
+public:
+    Distance(int f = 0, int i = 0) : feet(f), inches(i) { normalize(); }
+
+    void display() const { std::cout << feet << " feet " << inches << " inches\n"; }
+
+    Distance operator+(const Distance& other) const {
+        return Distance(feet + other.feet, inches + other.inches);
+    }
+
+    Distance operator-(const Distance& other) const {
+        return Distance(feet - other.feet, inches - other.inches);
+    }
+
+    bool operator==(const Distance& other) const {
+        return (feet == other.feet && inches == other.inches);
+    }
+
+    bool operator!=(const Distance& other) const { return !(*this == other); }
+    bool operator<(const Distance& other) const { return (feet * 12 + inches) < (other.feet * 12 + other.inches); }
+    bool operator>(const Distance& other) const { return other < *this; }
+    bool operator<=(const Distance& other) const { return !(other < *this); }
+    bool operator>=(const Distance& other) const { return !(*this < other); }
+};
+
+void testDistanceOperations() {
+    Distance d1(5, 8), d2(3, 4);
+    d1.display(); d2.display();
+
+    Distance sum = d1 + d2;
+    std::cout << "Sum: "; sum.display();
+
+    Distance diff = d1 - d2;
+    std::cout << "Difference: "; diff.display();
+
+    std::cout << std::boolalpha;
+    std::cout << "d1 == d2: " << (d1 == d2) << "\n";
+    std::cout << "d1 != d2: " << (d1 != d2) << "\n";
+    std::cout << "d1 < d2: " << (d1 < d2) << "\n";
+    std::cout << "d1 > d2: " << (d1 > d2) << "\n";
+    std::cout << "d1 <= d2: " << (d1 <= d2) << "\n";
+    std::cout << "d1 >= d2: " << (d1 >= d2) << "\n";
+}
+
+int main() {
+    testDistanceOperations();
+    return 0;
+}

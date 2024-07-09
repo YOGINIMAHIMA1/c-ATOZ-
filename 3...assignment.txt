@@ -1,0 +1,111 @@
+#include <iostream>
+#include <vector>
+#include <stdexcept>
+
+using namespace std;
+
+template <typename T>
+class DataContainer {
+public:
+    // Constructor with optional size parameter
+    DataContainer(size_t size = 0) : data(size) {}
+
+    // Overloaded subscript operator to access elements
+    T& operator[](size_t index) {
+        if (index >= data.size()) {
+            throw out_of_range("Index out of range");
+        }
+        return data[index];
+    }
+
+    // Member function to print all elements
+    void printAll() const {
+        for (const auto& element : data) {
+            cout << element << " ";
+        }
+        cout << endl;
+    }
+
+    // Member function to get the current size of the container
+    size_t size() const {
+        return data.size();
+    }
+
+    // Member function to append an element to the back of the container
+    void push_back(const T& value) {
+        data.push_back(value);
+    }
+
+private:
+    vector<T> data;  // Internal storage
+};
+
+// Function template to swap elements between two DataContainer objects
+template <typename T>
+void swap(DataContainer<T>& a, DataContainer<T>& b) {
+    if (a.size() != b.size()) {
+        throw invalid_argument("Containers must be of the same size to swap");
+    }
+
+    for (size_t i = 0; i < a.size(); ++i) {
+        T temp = a[i];
+        a[i] = b[i];
+        b[i] = temp;
+    }
+}
+
+int main() {
+    // Create instances of DataContainer for different data types
+    DataContainer<int> intContainer(5);
+    DataContainer<float> floatContainer(5);
+    DataContainer<string> stringContainer(5);
+
+    // Populate the containers with sample data
+    for (size_t i = 0; i < intContainer.size(); ++i) {
+        intContainer[i] = static_cast<int>(i + 1);
+        floatContainer[i] = static_cast<float>(i + 1.1);
+        stringContainer[i] = "str" + to_string(i + 1);
+    }
+
+    // Print the contents of each container
+    cout << "Initial contents:" << endl;
+    intContainer.printAll();
+    floatContainer.printAll();
+    stringContainer.printAll();
+
+    // Create additional instances for swapping
+    DataContainer<int> intContainer2(5);
+    DataContainer<float> floatContainer2(5);
+    DataContainer<string> stringContainer2(5);
+
+    // Populate the second set of containers with different data
+    for (size_t i = 0; i < intContainer2.size(); ++i) {
+        intContainer2[i] = static_cast<int>(i + 6);
+        floatContainer2[i] = static_cast<float>(i + 6.6);
+        stringContainer2[i] = "new" + to_string(i + 1);
+    }
+
+    // Print the contents of the second set of containers
+    cout << "Contents before swapping:" << endl;
+    intContainer2.printAll();
+    floatContainer2.printAll();
+    stringContainer2.printAll();
+
+    // Swap elements between containers of the same type
+    swap(intContainer, intContainer2);
+    swap(floatContainer, floatContainer2);
+    swap(stringContainer, stringContainer2);
+
+    // Print the containers again to confirm the swap
+    cout << "Contents after swapping:" << endl;
+    intContainer.printAll();
+    floatContainer.printAll();
+    stringContainer.printAll();
+
+    cout << "Second set after swapping:" << endl;
+    intContainer2.printAll();
+    floatContainer2.printAll();
+    stringContainer2.printAll();
+
+    return 0;
+}

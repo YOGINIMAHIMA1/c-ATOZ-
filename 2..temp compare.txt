@@ -1,0 +1,29 @@
+#include <iostream>
+
+// Function template to compare two values
+template <typename T>
+int compare(const T& a, const T& b) {
+    if (a > b) return 1;
+    if (a < b) return -1;
+    return 0;
+}
+
+// Example custom data type
+class CustomData {
+public:
+    int value;
+    CustomData(int v) : value(v) {}
+    bool operator>(const CustomData& other) const { return value > other.value; }
+    bool operator<(const CustomData& other) const { return value < other.value; }
+    bool operator==(const CustomData& other) const { return value == other.value; }
+};
+
+int main() {
+    int a = 5, b = 10;
+    std::cout << "Compare integers: " << compare(a, b) << std::endl;
+
+    CustomData obj1(15), obj2(10);
+    std::cout << "Compare custom data: " << compare(obj1, obj2) << std::endl;
+
+    return 0;
+}

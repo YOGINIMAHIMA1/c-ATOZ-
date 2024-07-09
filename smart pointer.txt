@@ -1,0 +1,30 @@
+#include <iostream>
+
+// A simple class
+class smart {
+public:
+    smart() {
+        std::cout << " Constructor" << std::endl;
+    }
+
+    ~smart() {
+        std::cout << " Destructor" << std::endl;
+    }
+
+    void sayHello() const {
+        std::cout << " Hello smart !" << std::endl;
+    }
+};
+
+int main() {
+    // Create a smart object using a raw pointer
+    smart* ptr = new smart();
+
+    // Accessing member function of smart using raw pointer
+    ptr->sayHello();
+
+    // Delete the object to free memory
+    delete ptr;
+
+    return 0;
+}
