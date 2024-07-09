@@ -1,0 +1,14 @@
+Explicit Casting - Data Loss: Declare an int variable x with the value 256 and a char variable y. Assign the value of x to y using explicit casting. Print the value of y.  Discuss the data loss that might occur and how to avoid it if necessary.
+
+#include<iostream>
+using namespace std;
+
+
+int main(){
+    int x = 256;
+    char y;
+    
+     y = static_cast<char>(x);
+    
+    std::cout << "Explicit value of y : " << static_cast<int>(y) << std::endl;
+}
