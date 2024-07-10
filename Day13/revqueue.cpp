@@ -1,44 +1,29 @@
 #include <iostream>
-#include <queue>
 #include <stack>
-
+#include <queue>
 using namespace std;
-
-void reverseQueue(queue<int>& q) {
-    stack<int> s;
-
-    // Dequeue all elements into stack
-    while (!q.empty()) {
-        s.push(q.front());
-        q.pop();
+void revfunc(queue<int>&q){  // function definition
+    stack<int>s; // stack declare
+    while(!q.empty()){    // check queue is empty or not
+        s.push(q.front());// add queue element in stack
+        q.pop();// queue element  delete
     }
-
-    // Enqueue all elements from stack back to queue (now in reverse order)
-    while (!s.empty()) {
-        q.push(s.top());
-        s.pop();
+    while(!s.empty()){ // check stack is empty or not
+        q.push(s.top());// now again stack element added to queue
+        s.pop();// now stack is empty
     }
 }
 
-int main() {
-    queue<int> q;
-
-    // Pushing elements into the queue
-    q.push(2);
-    q.push(3);
-    q.push(6);
-    q.push(34);
-    q.push(1);
-
-    // Reverse the queue
-    reverseQueue(q);
-
-    // Print the reversed queue
-    while (!q.empty()) {
-        cout << q.front() << " ";
-        q.pop();
+int main(){
+    queue<int>q;// queue declaration
+    q.push(22); //queue intialization
+    q.push(23);
+    q.push(35);
+    q.push(56);
+   
+    revfunc(q);// pass queue in reverse function
+    while(!q.empty()){ // check is empty or not
+        cout<<q.front()<<" ";// print queue
+        q.pop(); //delete all element
     }
-    cout << endl;
-
-    return 0;
 }
