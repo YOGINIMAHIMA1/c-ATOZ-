@@ -1,0 +1,197 @@
+************************************* Invoked: Wed Jul 10 11:00:52 2024
+[0] Arguments: C:\Users\Mahima Bhardwaj\Downloads\msys2-x86_64-20240507.exe
+[22] Operations sanity check succeeded.
+[41] Using metadata cache from "C:/Users/Mahima Bhardwaj/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[41] Found 0 cached items.
+[42] Language: en-US
+[556] Loaded control script ":/metadata/installer-config/control_js.js"
+[556] Using control script: ":/metadata/installer-config/control_js.js"
+[4068] Fetching latest update information...
+[4088] Loading component scripts...
+[24649] OverwriteTargetDirectory : Warning : You have selected an existing, non-empty directory for installation.
+Note that it will be completely wiped on uninstallation of this application.
+It is not advisable to install into this directory as installation might fail.
+Do you want to continue? Yes|No
+[77527] backup  operation: Mkdir
+[77527] 	- arguments: D:/CPPAdvance
+[77527] Done
+[77528] perform  operation: Mkdir
+[77528] 	- arguments: D:/CPPAdvance
+[77528] Done
+[77529] Preparing the installation...
+[77529] Install size: 1 components
+[77591] Preparing to unpack components...
+[77602] backup com.msys2.root concurrent operation: Extract
+[77602] 	- arguments: installer://com.msys2.root/20240507msys64.7z, D:/CPPAdvance
+[77602] Started
+[78748] Unpacking components...
+[78749] perform com.msys2.root concurrent operation: Extract
+[78749] 	- arguments: installer://com.msys2.root/20240507msys64.7z, D:/CPPAdvance
+[78749] Started
+[124317] Installing component MSYS2
+[124319] backup com.msys2.root operation: CreateShortcut
+[124319] 	- arguments: D:/CPPAdvance/mingw32.exe, C:\Users\Mahima Bhardwaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code/MSYS2 MINGW32.lnk, iconPath=D:/CPPAdvance/mingw32.exe
+[124319] Done
+[124320] perform com.msys2.root operation: CreateShortcut
+[124320] 	- arguments: D:/CPPAdvance/mingw32.exe, C:\Users\Mahima Bhardwaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code/MSYS2 MINGW32.lnk
+[124383] Done
+[124383] backup com.msys2.root operation: CreateShortcut
+[124383] 	- arguments: D:/CPPAdvance/mingw64.exe, C:\Users\Mahima Bhardwaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code/MSYS2 MINGW64.lnk, iconPath=D:/CPPAdvance/mingw64.exe
+[124383] Done
+[124384] perform com.msys2.root operation: CreateShortcut
+[124384] 	- arguments: D:/CPPAdvance/mingw64.exe, C:\Users\Mahima Bhardwaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code/MSYS2 MINGW64.lnk
+[124402] Done
+[124402] backup com.msys2.root operation: CreateShortcut
+[124402] 	- arguments: D:/CPPAdvance/ucrt64.exe, C:\Users\Mahima Bhardwaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code/MSYS2 UCRT64.lnk, iconPath=D:/CPPAdvance/ucrt64.exe
+[124402] Done
+[124403] perform com.msys2.root operation: CreateShortcut
+[124403] 	- arguments: D:/CPPAdvance/ucrt64.exe, C:\Users\Mahima Bhardwaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code/MSYS2 UCRT64.lnk
+[124421] Done
+[124421] backup com.msys2.root operation: CreateShortcut
+[124421] 	- arguments: D:/CPPAdvance/clang64.exe, C:\Users\Mahima Bhardwaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code/MSYS2 CLANG64.lnk, iconPath=D:/CPPAdvance/clang64.exe
+[124422] Done
+[124422] perform com.msys2.root operation: CreateShortcut
+[124422] 	- arguments: D:/CPPAdvance/clang64.exe, C:\Users\Mahima Bhardwaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code/MSYS2 CLANG64.lnk
+[124441] Done
+[124442] backup com.msys2.root operation: CreateShortcut
+[124442] 	- arguments: D:/CPPAdvance/clangarm64.exe, C:\Users\Mahima Bhardwaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code/MSYS2 CLANGARM64.lnk, iconPath=D:/CPPAdvance/clangarm64.exe
+[124442] Done
+[124442] perform com.msys2.root operation: CreateShortcut
+[124442] 	- arguments: D:/CPPAdvance/clangarm64.exe, C:\Users\Mahima Bhardwaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code/MSYS2 CLANGARM64.lnk
+[124464] Done
+[124464] backup com.msys2.root operation: CreateShortcut
+[124464] 	- arguments: D:/CPPAdvance/msys2.exe, C:\Users\Mahima Bhardwaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code/MSYS2 MSYS.lnk, iconPath=D:/CPPAdvance/msys2.exe
+[124464] Done
+[124464] perform com.msys2.root operation: CreateShortcut
+[124464] 	- arguments: D:/CPPAdvance/msys2.exe, C:\Users\Mahima Bhardwaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code/MSYS2 MSYS.lnk
+[124483] Done
+[124484] backup com.msys2.root operation: Execute
+[124484] 	- arguments: D:/CPPAdvance\usr\bin\bash.exe, --login, -c, exit
+[124484] Done
+[124484] perform com.msys2.root operation: Execute
+[124485] 	- arguments: D:/CPPAdvance\usr\bin\bash.exe, --login, -c, exit
+[124613] D:/CPPAdvance\\usr\\bin\\bash.exe" started, arguments: "--login -c exit
+[125959] Copying skeleton files.\nThese files are for the users to personalise their msys2 experience.\n\nThey will never be overwritten nor automatically updated.\n
+[125959] \n
+[126567] './.bashrc' -> '/home/Mahima Bhardwaj/.bashrc'\n
+[126692] './.bash_logout' -> '/home/Mahima Bhardwaj/.bash_logout'\n
+[126817] './.bash_profile' -> '/home/Mahima Bhardwaj/.bash_profile'\n
+[126944] './.profile' -> '/home/Mahima Bhardwaj/.profile'\n
+[127549] 'C:\\WINDOWS\\system32\\drivers\\etc\\hosts' -> '/etc/hosts'\n
+[127949] 'C:\\WINDOWS\\system32\\drivers\\etc\\protocol' -> '/etc/protocols'\n
+[128346] 'C:\\WINDOWS\\system32\\drivers\\etc\\services' -> '/etc/services'\n
+[128808] 'C:\\WINDOWS\\system32\\drivers\\etc\\networks' -> '/etc/networks'\n
+[132109] ==> Generating pacman master key. This may take some time.\n
+[135603] ==> Updating trust database...\n
+[136238] ==> Appending keys from msys2.gpg...\n
+[138514] ==> Locally signing trusted keys in keyring...\n
+[140617]   -> Locally signed 5 keys.\n
+[140693] ==> Importing owner trust values...\n
+[140847] ==> Disabling revoked keys in keyring...\n
+[141500]   -> Disabled 4 keys.\n
+[141560] ==> Updating trust database...\n
+[172329] \x1B[H\x1B[2J\x1B[3J
+[172347] Warning: [1;32mMSYS2 is starting for the first time. Executing the initial setup.[1;0m
+gpg: /etc/pacman.d/gnupg/trustdb.gpg: trustdb created
+gpg: no ultimately trusted keys found
+gpg: starting migration from earlier GnuPG versions
+gpg: porting secret keys from '/etc/pacman.d/gnupg/secring.gpg' to gpg-agent
+gpg: migration succeeded
+gpg: Generating pacman keyring master key...
+gpg: directory '/etc/pacman.d/gnupg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/etc/pacman.d/gnupg/openpgp-revocs.d/927B78EE8512FFBC77329A671A49A00B17D59E2A.rev'
+gpg: Done
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: setting ownertrust to 4
+gpg: setting ownertrust to 4
+gpg: setting ownertrust to 4
+gpg: setting ownertrust to 4
+gpg: setting ownertrust to 4
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   5  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: depth: 1  valid:   5  signed:   7  trust: 0-, 0q, 0n, 5m, 0f, 0u
+gpg: depth: 2  valid:   4  signed:   2  trust: 4-, 0q, 0n, 0m, 0f, 0u
+gpg: next trustdb check due at 2024-10-07
+gpg: error retrieving 'alexey.pawlow@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key F40D263ECA25678A: "Alexey Pavlov (Alexpux) <alexey.pawlow@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'david.macek.0@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 790AE56A1D3CFDDC: "David Macek (MSYS2 master key) <david.macek.0@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'martellmalone@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key DA7EF2ABAEEA755C: "Martell Malone (martell) <martellmalone@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'reiter.christoph@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 755B8182ACD22879: "Christoph Reiter (MSYS2 master key) <reiter.christoph@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'icquinteiro@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 9F418C233E652008: "Ignacio Casal Quinteiro <icquinteiro@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'mingw.android@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key BBE514E53E0D0813: "Ray Donnelly (MSYS2 Developer - master key) <mingw.android@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'alexpux@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 5F92EFC1A47D45A1: "Alexey Pavlov (Alexpux) <alexpux@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'david.macek.0@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 974C8BE49078F532: "David Macek <david.macek.0@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'reiter.christoph@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key FA11531AA0AA7F57: "Christoph Reiter (MSYS2 development key) <reiter.christoph@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'me@martellmalone.com' via WKD: Connection refused
+gpg: error reading key: Connection refused
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 794DCF97F93FC717: "Martell Malone (martell) <me@martellmalone.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'martellmalone@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key D595C9AB2C51581E: "Martell Malone (MSYS2 Developer) <martellmalone@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: error retrieving 'mingw.android@gmail.com' via WKD: No data
+gpg: error reading key: No data
+gpg: refreshing 1 key from hkps://keyserver.ubuntu.com
+gpg: key 4DF3B7664CA56930: "Ray Donnelly (MSYS2 Developer) <mingw.android@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+[1;32mInitial setup complete. MSYS2 is now ready to use.[1;0m
+
+[172348] Done
+[176776] Warning: DirectWrite: CreateFontFaceFromHDC() failed (Indicates an error in an input file such as a font file.) for QFontDef(Family="8514oem", pointsize=9, pixelsize=20, styleHint=5, weight=400, stretch=100, hintingPreference=0) LOGFONT("8514oem", lfWidth=0, lfHeight=-20) dpi=96
+[176808] Writing maintenance tool: "D:/CPPAdvance/uninstall.exe.new"
+[176809] Writing maintenance tool.
+[177163] Wrote permissions for maintenance tool.
+[181386] Maintenance tool hard restart: false.
+[181394] Installation finished!
+[202184] starting "D:/CPPAdvance/ucrt64.exe" QList()
