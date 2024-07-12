@@ -1,0 +1,42 @@
+
+#include <iostream>
+using namespace std;
+
+class MyBaseException : public std::exception {
+public:
+    MyBaseException(const std::string& message)
+        : errorMessage(message) {}
+
+    const char* what() const noexcept override {
+        return errorMessage.c_str();
+    }
+
+private:
+    std::string errorMessage;
+};
+class FileException : public MyBaseException {
+public:
+    FileException(const std::string& filename, const std::string& message)
+        : MyBaseException("File '" + filename + "' error: " + message) {}
+};
+
+
+
+class FileNotFoundException : public FileException {
+public:
+    FileNotFoundException(const std::string& filename)
+        : FileException(filename, "File not found") {}
+};
+
+class NetworkTimeoutException : public NetworkException {
+public:
+    NetworkTimeoutException(const std::string& operation)
+        : NetworkException(operation, 408) {}
+};
+void readFile(const std::string& filename) {
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        throw FileNotFoundException(filename);
+    }
+   
+
